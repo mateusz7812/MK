@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+
+<head>
+  <meta charset="utf-8">
+  <title>Page in building</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename="css/normalize.css") }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename="css/main.css") }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename="css/page.css") }}">
+
+  <meta name="theme-color" content="#fafaff">
+</head>
+
+<body onload="updateForm()">
+<div id="banner">
+  <img id="banner_img" src="{{ url_for('static', filename="img/banner.jpeg") }}" alt="background photo"/>
+  <div id="logo_container">
+    <img id="logo" alt="logo" src="{{ url_for('static', filename="img/logo.png") }}"/>
+  </div>
+  <div id="page_header">
+    <span>Usługi i Naprawa Maszyn</span><br/> <span>Mirek Kania</span>
+  </div>
+</div>
+<ul id="menu">
+  <li onclick="scrollToId('about')">O nas</li>
+  <li onclick="scrollToId('services')">Usługi</li>
+  <li onclick="scrollToId('address')">Adres</li>
+  <li onclick="scrollToId('contact')">Kontakt</li>
+</ul>
+<div id="about">
+  <h1 class="headers">O nas</h1>
+  Firma Usługi i Naprawa Maszyn oferuje różnego rodzaju usługi takie jak: spawanie, usługi ślusarskie, ogrodzenia,
+  bramy,balustrady, naprawa maszyn rolniczych oraz budowlanych i inne. Firma dba o zadowolenie klienta i służy
+  kompleksowym doradztwem w takich aspektach jak projekt czy dobór materiałów. Materiały do zlecenia zakupuje zakład, po
+  wcześniejszej konsultacji, lub klient. Firmę cechuje rzetelność oraz indywidualne podejście do każdego zlecenia, przez
+  co usługi są najwyższej jakości.
+</div>
+<h1 id="services" class="headers">Usługi</h1>
+<div class="module">
+  <div class="service_image_container">
+    <img src="{{ url_for('static', filename="img/welding.jpg") }}" alt="img"/>
+  </div>
+  <div class="service_description_container">
+    <div>
+      <div>
+        Oferowane metody spawalnicze: Tig , MIG Mag, Elektroda. Profesjonalizm oferowanej usługi potwierdzają
+        kwalifikacje i certyfikaty: < miejsce na certyfikaty >.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="module">
+  <div class="service_description_container">
+    <div>
+      <div>
+        Ogrodzenia
+        Bramy
+        Balustrady
+        Drzwi
+        Konstrukcje
+        Nulla turpis neque, cursus a nibh ut, faucibus vulputate mauris. Maecenas a sodales dui, et fermentum risus.
+        Aliquam efficitur viverra nulla, varius ultricies nunc eleifend ac.
+      </div>
+    </div>
+  </div>
+  <div class="service_image_container">
+    <img alt="service" src="{{ url_for('static', filename="img/polishing.jpg") }}"/>
+  </div>
+</div>
+<div class="module">
+  <div class="service_image_container">
+    <img alt="service" src="{{ url_for('static', filename="img/screwing.jpeg") }}"/>
+  </div>
+  <div class="service_description_container">
+    <div>
+      <div>
+        Maszyny Rolnicze oraz budowlane
+        Nulla turpis neque, cursus a nibh ut, faucibus vulputate mauris. Maecenas a sodales dui, et fermentum risus.
+        Aliquam efficitur viverra nulla, varius ultricies nunc eleifend ac.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="module">
+  <div class="service_description_container">
+    <div>
+      <div>
+        Ślusarstwo
+        Cięcie Plazmą
+        Nulla turpis neque, cursus a nibh ut, faucibus vulputate mauris. Maecenas a sodales dui, et fermentum risus.
+        Aliquam efficitur viverra nulla, varius ultricies nunc eleifend ac.
+      </div>
+    </div>
+  </div>
+  <div class="service_image_container">
+    <img alt="service" src="{{ url_for('static', filename="img/cutting.jpg") }}"/>
+  </div>
+</div>
+<div id="address">
+  <div id="address_data">
+    <h1 class="headers">Adres</h1>
+    <p>
+      <span onclick="mapsSelector()">Usługi I Naprawa Maszyn Mirosław Kania<br/>Ryszewo 18a<br/>88-420 Rogowo</span>
+      <span>E-mail: <a href="mailto:test@example.com"> przykładowy@email.com</a></span>
+      <span>Telefon: <a href="tel:909090909">909090909</a></span>
+    </p>
+  </div>
+  <div id="map">
+    <iframe id="gmap_canvas"
+            src="https://maps.google.com/maps?q=ryszewo%2018a&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>
+  </div>
+</div>
+<div id="contact">
+  <h1 class="headers">Kontakt</h1>
+  <div id="contact-flex">
+    <div id="contact_description">
+      <div>
+        <div>
+          Wierzymy, że indywidualne podejście do każdego zlecenia, zapewnia usługi najwyższej jakości, dlatego służymy
+          kompleksowym doradztwem. Zapraszamy do kontaktu.
+        </div>
+      </div>
+    </div>
+    <div id="form">
+      <div>
+        <label>
+          Treść
+          <textarea></textarea>
+        </label>
+        <div>
+          <div>
+            <label onclick="updateForm()">
+              Forma kontaktu
+              <label><input type="radio" name="contact" value="tel" checked> Telefon</label>
+              <label><input type="radio" name="contact" value="email"> E-mail</label>
+            </label>
+          </div>
+          <div>
+            <label id="tel_label">
+              Telefon
+              <input type="text" name="tel">
+            </label>
+            <label id="email_label">
+              E-mail
+              <input type="email" name="mail">
+            </label></div>
+        </div>
+        <input value="Wyślij" type="submit" onclick="sendEmail()"/>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <a>© 2020 Usługi I Naprawa Maszyn Mirosław Kania</a>
+  <a>consectetur adipiscing elit</a>
+  <a>Praesent eu lectus vestibulum</a>
+</div>
+
+<script src="{{ url_for('static', filename="js/main.js") }}"></script>
+
+</body>
+
+</html>
