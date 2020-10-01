@@ -37,7 +37,11 @@ function sendEmail() {
     };
     request.open("POST", "/", true);
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.send("message=Henry&tel=123456789&mail=qwe@qwe.qwe");
+
+    let message = document.getElementById("message_box").value;
+    let tel = document.getElementById("tel_input").value;
+    let mail = document.getElementById("mail_input").value;
+    request.send(`message=${message}&tel=${tel}&mail=${mail}`);
 }
 
 function updateForm() {
