@@ -1,4 +1,5 @@
 import smtplib
+from socket import gethostname
 
 import flask
 from flask import Flask, request
@@ -43,4 +44,5 @@ Subject: Nowa wiadomość
 
 
 if __name__ == '__main__':
-    app.run()
+    if 'liveconsole' not in gethostname():
+        app.run()
