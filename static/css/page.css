@@ -38,7 +38,7 @@ html {
 #banner {
     position: relative;
     box-sizing: border-box;
-    height: 90vh;
+    height: 93vh;
     overflow: hidden;
 }
 
@@ -46,7 +46,7 @@ html {
     margin: 0;
     position: absolute;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -98,7 +98,7 @@ body > * {
     position: sticky;
     top: 0;
     width: 100%;
-    height: 10vh;
+    height: 7vh;
     box-sizing: border-box;
     margin: 0;
     padding: 0 10vw;
@@ -138,14 +138,9 @@ body > * {
     box-shadow: 0 0 10px 0 var(--dark_background_color) inset;
 }
 
-#about h1 {
-    margin-bottom: 3%;
-}
-
 .headers {
     text-align: center;
     font-size: 40px;
-    margin: 5% 0 0 0;
 }
 
 .module {
@@ -154,7 +149,7 @@ body > * {
     position: relative;
     box-shadow: 0 0 10px 1px black;
     width: 80%;
-    margin: 10vh auto;
+    margin: 0 auto 5vw auto;
     height: 500px;
     box-sizing: border-box;
 }
@@ -250,10 +245,6 @@ body > * {
     line-height: 1.5em;
 }
 
-#address_data h1 {
-    margin-bottom: 5%;
-}
-
 #address_data span {
     display: block;
 }
@@ -311,7 +302,7 @@ body > * {
     overflow: hidden;
     box-shadow: 0 0 10px 0 #222 inset;
     box-shadow: 0 0 10px 0 var(--dark_background_color) inset;
-    padding: 0 10vw 5vh 10vw;
+    padding: 5vh 10vw;
 }
 
 #contact-flex {
@@ -423,11 +414,12 @@ body > * {
     padding: 25px 10vw;
     box-sizing: border-box;
     text-align: justify;
-    text-align-last: justify;
+    text-align-last: center;
 }
 
 #footer > a {
     display: inline-block;
+    text-align-last: center;
     position: relative;
 }
 

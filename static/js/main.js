@@ -24,15 +24,31 @@ function mapsSelector() {
         window.open("https://www.google.com/maps/place/Ryszewo+18A,+88-420/@52.6980981,17.707991,13z");
 }
 
+function is_validated_successfully() {
+    let tel = document.getElementById("tel_input").value;
+    let mail = document.getElementById("mail_input").value;
+    return tel != "" || mail != "";
+
+}
+
 function sendEmail() {
+    if (!is_validated_successfully()) {
+        document.getElementById("send_result").innerHTML = "Podaj numer telefonu i/lub adres e-mail.";
+        return;
+    }
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            console.log("it works")
-            //document.getElementById("demo").innerHTML = this.responseText;
-        }
-        else {
-          console.log("error")
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                console.log("it works");
+                document.getElementById("send_result").innerHTML = "Wiadomość została wysłana.";
+                //document.getElementById("demo").innerHTML = this.responseText;
+            } else {
+                console.log("error");
+                document.getElementById("send_result").innerHTML = "Wystąpił błąd.";
+            }
+        } else {
+                document.getElementById("send_result").innerHTML = "Wysyłanie...";
         }
     };
     request.open("POST", "/", true);

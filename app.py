@@ -35,8 +35,8 @@ To: %s
 Subject: Nowa wiadomość
 
 %s
-""" % (gmail_user, "mateusz78122@gmail.com", email_text)
-    server.sendmail(gmail_user, "mateusz78122@gmail.com", email_data.encode('utf-8'))
+""" % (gmail_user, "naprawianium@gmail.com", email_text)
+    server.sendmail(gmail_user, "naprawianium@gmail.com", email_data.encode('utf-8'))
     server.close()
 
     return flask.Response(status=200)
