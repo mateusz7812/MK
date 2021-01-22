@@ -114,6 +114,7 @@ body > * {
 }
 
 #menu > li {
+    cursor: pointer;
     width: 25%;
     display: table-cell;
     vertical-align: middle;
